@@ -15,9 +15,12 @@
     <link
             href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Roboto:wght@300&family=Zilla+Slab:wght@300&display=swap"
             rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/productdetails.css" />
+    <link rel="stylesheet" href="/css/relateditems.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     <title>Product</title>
 </head>
 
@@ -27,7 +30,7 @@
 <div th:insert="~{common/navbar :: navbar}" id="navbar"></div>
 
 <!-- Content of Shop -->
-<div th:insert="~{shop/product-list :: product-list}" id="product-list"></div>
+<div th:insert="~{shop/product-details :: product-details}" id="product-details"></div>
 
 <!-- Related Items-->
 <div th:insert="~{common/related-items :: related-items}" id="related-items"></div>
