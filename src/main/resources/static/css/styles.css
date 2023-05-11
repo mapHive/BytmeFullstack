@@ -1,0 +1,71 @@
+#navbar {
+    background-color: white;
+    width: 100%;
+}
+
+section,
+#banner,
+#content,
+#product-list,
+#product-details,
+#product-category,
+#related-items,
+#footer {
+    background-color: #f2f2f2;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+
+    font-weight: bold;
+    line-height: 1.3;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 3.157rem;
+}
+
+h2 {
+    font-size: 2.369rem;
+}
+
+h3 {
+    font-size: 1.777rem;
+}
+
+h4 {
+    font-size: 1.333rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #ed7171;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    background-color: #f2f2f2;
+    border: 1px solid black;
+    border-radius: 5;
+    align-items: center;
+    font-family: 'Montserrat';
+}

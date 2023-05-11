@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <title>About Us Content</title>
+</head>
+
+<body>
+
+<div th:fragment="aboutus" class="aboutuscontent container-md container-fluid">
+    <div class="description container-fluid">
+        <h1>About Us</h1>
+        <h2>What Makes BYTEME Different?</h2>
+
+        <div class="details container-fluid container-md">
+            <p class="my-paragraph">At BYTEME, we don't just sell computer parts, we live and breathe them. We're obsessed with innovation and we want to help you achieve the same level of passion for technology. Our commitment is to deliver only the best quality products that meet your specific needs. Whether you're looking for high-performance CPUs, powerful graphics cards, or lightning-fast storage solutions, we've got you covered. So if you're ready to unleash your inner tech artist, and turn your computer dreams into reality, join the BYTEME party today. It's going to be epic! May the BYTEs be with you!</p>
+            <button class="read-more-button" onclick="showFullParagraph()">Read more</button>
+        </div>
+
+        <div class="team container-fluid container-md text-center">
+            <div class="row">
+                <div class="col teamMember1">
+                    <img class="profile" src="/images/members/hadi.jpg" alt="Hadi" />
+                    <h4>Hadi <br/>'Byte Boss' <br/> Rosman</h4>
+                    <a href="https://www.linkedin.com/in/hadi-rosman-0080a9146/">
+                        <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
+                    </a>
+                </div>
+                <div class="col teamMember2">
+                    <img class="profile" src="/images/members/yuki.jpeg" alt="Yuki" />
+                    <h4>Yuki <br/>'Pixel Picasso' <br/> Shintaku</h4>
+                    <a href="https://www.linkedin.com/in/yuki-shintaku-446958114/">
+                        <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
+                    </a>
+                </div>
+                <div class="col teamMember3">
+                    <img class="profile" src="/images/members/Kiran.jpg" alt="Kiran" />
+                    <h4>Kiran<br/> 'Tech Whisperer'<br/> Brar</h4>
+                    <a href="https://www.linkedin.com/in/kiranjeet-singh-brar-276941116/">
+                        <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
+                    </a>
+                </div>
+                <div class="col teamMember4">
+                    <img class="profile" src="/images/members/pat.jpg" alt="Pat"/>
+                    <h4>Patricia<br/> 'Byte Babe'<br/> Looi</h4>
+                    <a href="https://www.linkedin.com/in/patricia-looi-75023955/">
+                        <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="contact container-md container-fluidr">
+        <h4> We love to hear from you.</h4>
+        <a href="mailto:contact@byteme.com" class="email-button">contact@byteme.com</a>
+    </div>
+
+
+
+    <script src="/js/aboutus.js"></script>
+</body>
+
+</html>
