@@ -12,8 +12,8 @@ import java.nio.file.Paths;
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 
-//    @Value("${image.folder}")
-//    private String imageFolder;
+    @Value("${image.folder}")
+    private String imageFolder;
 
     public void addViewControllers(ViewControllerRegistry registry) {
 
@@ -38,11 +38,15 @@ public class MvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/static/")
                 .setCachePeriod(0);
 
-//        Path uploadDir = Paths.get(imageFolder);
-//        String uploadPath = uploadDir.toFile().getAbsolutePath();
-//
-//        registry.addResourceHandler("/static/images/" + imageFolder + "/**")
+        Path uploadDir = Paths.get(imageFolder);
+        String uploadPath = uploadDir.toFile().getAbsolutePath();
+
+//        registry.addResourceHandler("/src/main/resources/static/images/" + imageFolder + "/**")
 //                .addResourceLocations("file:" + uploadPath + "/")
 //                .setCachePeriod(0);
+
+        registry.addResourceHandler("/" + imageFolder + "/**")
+                .addResourceLocations("file:" + uploadPath + "/")
+                .setCachePeriod(0);
     }
 }

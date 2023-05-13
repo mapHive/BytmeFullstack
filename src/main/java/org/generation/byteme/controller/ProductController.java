@@ -1,6 +1,6 @@
 package org.generation.byteme.controller;
 
-//import org.generation.byteme.component.FileUploadUtil;
+import org.generation.byteme.component.FileUploadUtil;
 import org.generation.byteme.controller.dto.ProductDTO;
 import org.generation.byteme.repository.entity.Product;
 import org.generation.byteme.service.ProductService;
@@ -16,8 +16,8 @@ import java.io.IOException;
 @RequestMapping("/product")
 public class ProductController {
 
-//    @Value("${image.folder}")
-//    private String imageFolder;
+    @Value("${image.folder}")
+    private String imageFolder;
 
     private final ProductService productService;
 
@@ -31,11 +31,11 @@ public class ProductController {
     public Iterable<Product> getProducts()
     {
 
-//            for (Product images : productService.all())
-//            {
-//                String setImages = imageFolder + "/" + images.getProductImages();
-//                images.setProductImages(setImages);
-//            }
+            for (Product image : productService.all())
+            {
+                String setURL = imageFolder + "/" + image.getProductImages();
+                image.setProductImages(setURL);
+            }
             return productService.all();
 
     }
@@ -63,14 +63,14 @@ public class ProductController {
                      @RequestParam(name="productCategory", required = true) String productCategory,
                      @RequestParam(name="productDescription", required = true) String productDescription,
                      @RequestParam(name="productOptions", required = false) String productOptions,
-                     @RequestParam(name="productImages", required = true) String productImages)
-//                     @RequestParam("imagefile") MultipartFile multipartFile) throws IOException
+                     @RequestParam(name="productImages", required = true) String productImages,
+                     @RequestParam("imagefile") MultipartFile multipartFile) throws IOException
     {
-//        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-//
-//        FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 
-        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages);
-        productService.save(new Product(productDto));
+        FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);
+
+        ProductDTO productDTO = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages);
+        productService.save(new Product(productDTO));
     }
 }
