@@ -10,7 +10,7 @@
 
 <body>
 <div th:fragment="admin-form" class="admin-form container-fluid">
-    <form class="container-fluid my-5">
+    <form class="container-fluid my-5" enctype="multipart/form-data">
 
         <h2 class="mb-4">Product Information</h2>
 
@@ -83,6 +83,13 @@
             <label for="newProductImages" class="form-label">Images (jpeg, png)</label>
             <input class="form-control" type="file" id="newProductImages" multiple />
         </div>
+
+<!--        <div class="form-group mb-5">-->
+<!--            <label for="newItemImageUrl">Image URL</label>-->
+<!--            <input type="text" class="form-control" id="newItemImageUrl">-->
+<!--            <label for="newItemImageFile">Image Upload</label>-->
+<!--            <input type="file" id="newItemImageFile" name="newItemImageFile">-->
+<!--        </div>-->
 
         <!-- Submit Button -->
 
