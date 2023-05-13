@@ -26,7 +26,7 @@ newProductForm.addEventListener('submit', (event) => {
   const productImages = document.querySelector('#newProductImages').value.replace("C:\\fakepath\\", "");
 
   // Calls a function from the productController.js to access the API to add items to the database
-  addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages)   //arguments
+  addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, storeImage)   //arguments
 
 
 });
