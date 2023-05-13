@@ -31,10 +31,10 @@ public class ProductController {
     public Iterable<Product> getProducts()
     {
 
-            for (Product image : productService.all())
+            for (Product images : productService.all())
             {
-                String setURL = imageFolder + "/" + image.getProductImages();
-                image.setProductImages(setURL);
+                String setURL = imageFolder + "/" + images.getProductImages();
+                images.setProductImages(setURL);
             }
             return productService.all();
 
@@ -70,7 +70,7 @@ public class ProductController {
 
         FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);
 
-        ProductDTO productDTO = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages);
-        productService.save(new Product(productDTO));
+        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages);
+        productService.save(new Product(productDto));
     }
 }
