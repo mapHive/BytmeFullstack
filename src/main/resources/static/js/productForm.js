@@ -32,9 +32,9 @@ newProductForm.addEventListener('submit', (event) => {
 });
 
 
-//// select file input
-//const input = document.querySelector('#newProductImages');
-//// add event listener
-//input.addEventListener('change', () => {
-//  storeImage = input.files[0]; //array of files for us to access
-//});
+// select file input
+const input = document.querySelector('#newProductImages');
+// add event listener
+input.addEventListener('change', () => {
+  storeImage = input.files[0]; // Array of files for us to access
+});
