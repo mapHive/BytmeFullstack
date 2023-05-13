@@ -73,7 +73,7 @@ function renderProductPage() {
 }
 
 //addProduct(name, description, imageUrl, style, price, storeImage);
-function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages)
+function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, imageObject)
 {
    const formData = new FormData();
    formData.append('productName', productName);
@@ -83,7 +83,7 @@ function addProduct(productName, productPrice, productQuantity, productCategory,
    formData.append('productDescription', productDescription);
    formData.append('productOptions',productOptions);
    formData.append('productImages',productImages);
-
+   formData.append('imagefile',imageObject);
 
   fetch(addAPI, {
         method: 'POST',

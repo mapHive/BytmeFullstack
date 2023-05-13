@@ -1,7 +1,6 @@
 package org.generation.byteme.controller;
 
 //import org.generation.byteme.component.FileUploadUtil;
-//import org.generation.byteme.component.FileUploadUtil;
 import org.generation.byteme.controller.dto.ProductDTO;
 import org.generation.byteme.repository.entity.Product;
 import org.generation.byteme.service.ProductService;
