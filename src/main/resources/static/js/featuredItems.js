@@ -41,8 +41,10 @@ function displayProduct()
 function renderProductPage() {
 
     let display = "";
+    const maxItems= 8;
+    const itemCount = Math.min(featuredItems.length, maxItems);
 
-    for (let i = 0; i < featuredItems.length; i++) {
+    for (let i = 0; i < itemCount; i++) {
 
         display += `
            <div class="col my-5">
@@ -62,20 +64,3 @@ function renderProductPage() {
     document.querySelector("#row").innerHTML = display;
 
 }
-
-
-//function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages) {
-//
-//  const featureditems = {
-//    productName: productName,
-//    productPrice: productPrice,
-//    productQuantity: productQuantity,
-//    productCategory: productCategory,
-//    productDescription: productDescription,
-//    productOptions: productOptions,
-//    productImages: productImages
-//  }
-//
-//  featuredItems.push(featureditems);
-//
-//}
