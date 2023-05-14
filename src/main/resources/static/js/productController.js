@@ -20,7 +20,7 @@ function displayProduct()
            .then(function(data) {
                console.log("2. receive data")
                console.log(data);
-               data.forEach(function (item) {
+               data.forEach(function (product) {
 
                    const productObj = {
                        productId: product.productId,
