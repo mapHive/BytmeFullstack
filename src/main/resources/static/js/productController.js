@@ -10,7 +10,10 @@ Product controller will perform action to the products to be displayed
 // Development APIs
 const addAPI= 'http://localhost:8080/product/add';
 const displayAPI = 'http://localhost:8080/product/all';
+
 let productController = [];
+
+let originalData = []; // Store the original data obtained from the backend
 
 function displayProduct()
 {
@@ -20,7 +23,10 @@ function displayProduct()
            .then(function(data) {
                console.log("2. receive data")
                console.log(data);
-               data.forEach(function (item) {
+
+               originalData = data; // Store the original data
+
+               data.forEach(function (product) {
 
                    const productObj = {
                        productId: product.productId,
@@ -61,7 +67,7 @@ function renderProductPage() {
                           <h5 class="card-title">${productController[i].productName}</h5>
                           <h5 class="price">$${productController[i].productPrice}</h5>
                           <p class="card-text py-3">${productController[i].productDescription}</p>
-                          <a th:href="@{product}" class="btn btn-primary">View Product</a>
+                          <a href="/product" data-product-id="${productController[i].productId}" class="btn btn-primary view-product-btn">View Product</a>
                       </div>
                   </div>
             </div>
@@ -70,7 +76,17 @@ function renderProductPage() {
 
     document.querySelector("#row").innerHTML = display;
 
-}
+      // Add event listeners for 'View Product' buttons
+      const viewProductButtons = document.querySelectorAll('.view-product-btn');
+
+      viewProductButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          const productId = event.currentTarget.getAttribute('data-product-id');
+          window.location.href = `/product?productId=${productId}`;
+        });
+      });
+    }
 
 //addProduct(name, description, imageUrl, style, price, storeImage);
 function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, imageObject)
@@ -103,3 +119,39 @@ function addProduct(productName, productPrice, productQuantity, productCategory,
             alert("Error adding item to Product")
         });
 }
+
+displayProduct();
+
+// To filter categories
+
+function filterProductsByCategory(category) {
+    // Filter productController array by product category
+    let filteredProducts = originalData.filter(product => product.productCategory === category);
+
+    // Update the productController with filtered products
+    productController = filteredProducts;
+
+    // Rerender the products on the page
+    renderProductPage();
+}
+
+
+// Event listener to start filtering based on category
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all category items
+    let categoryItems = document.querySelectorAll('.list-group-item');
+
+    // Attach click event listener to each category item
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Get category from data-text attribute
+            let category = e.currentTarget.id;
+
+            // Filter products by category
+            filterProductsByCategory(category);
+        });
+    });
+});
