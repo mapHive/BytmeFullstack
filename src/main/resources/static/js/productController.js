@@ -155,8 +155,16 @@ document.addEventListener("DOMContentLoaded", function() {
             // Get category from data-text attribute
             let category = e.currentTarget.id;
 
-            // Filter products by category
-            filterProductsByCategory(category);
+            // If 'all' category is selected, reset productController array to originalData
+                        if (category === 'all') {
+                            productController = [...originalData]; // spread operator to create a new array
+                        } else {
+                            // Filter products by category
+                            productController = originalData.filter(product => product.productCategory === category);
+                        }
+
+            // Rerender the products on the page
+                        renderProductPage();
         });
     });
 });
