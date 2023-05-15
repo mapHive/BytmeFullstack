@@ -5,8 +5,8 @@ const displayAPI = 'http://localhost:8080/product/all';
 let productDetails = [];
 
 function getProductIdFromUrl() {
-  const urlParam = new URLSearchParam(window.location.search);
-  return urlParam.get('productId');
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('productId');
 }
 
 function displayProduct() {
@@ -48,13 +48,13 @@ function displayProduct() {
 function renderProductPage() {
 
 let display = "";
+let singleProduct = productDetails[0];
 
-   for (let i = 0; i < productDetails.length; i++) {
-           let imagesHTML = '';
-           for (let j = 0; j < productDetails[i].productImages.length; j++) {
+let imagesHTML = "";
+           for (let j = 0; j < singleProduct.productImages.length; j++) {
                imagesHTML += `
                <div class="carousel-item ${j === 0 ? 'active' : ''}">
-                 <img src="${productDetails[i].productImages[j]}" class="d-block w-100 image-fluid" alt="..." />
+                 <img src="${singleProduct.productImages[j]}" class="d-block w-100 image-fluid" alt="..." />
                </div>`;
            }
 
@@ -92,7 +92,7 @@ let display = "";
            <div class="col right-col my-5">
                            <div class="container-fluid product-name">
                            <!-- This is the h2 product name container -->
-                           <h2 class="py-3">${productDetails[i].productName}</h2>
+                           <h2 class="py-3">${singleProduct.productName}</h2>
                            </div>
 
                            <div class="container-fluid product-price-options">
@@ -100,13 +100,13 @@ let display = "";
                                                <div class="row">
 
                                                    <div class="col price my-4">
-                                                       <h3>${productDetails[i].productPrice}</h3 >
+                                                       <h3>${singleProduct.productPrice}</h3 >
                                                    </div >
 
                                                    <div class="container-fluid product-description">
 
                                                        <pre class="py-3">
-                                                               ${productDetails[i].productDescription}
+                                                               ${singleProduct.productDescription}
                                                        </pre>
                                                    </div>
 
@@ -125,4 +125,3 @@ let display = "";
        document.querySelector("#row").innerHTML = display;
 
    }
-}
