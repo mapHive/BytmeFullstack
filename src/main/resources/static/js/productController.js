@@ -10,7 +10,10 @@ Product controller will perform action to the products to be displayed
 // Development APIs
 const addAPI= 'http://localhost:8080/product/add';
 const displayAPI = 'http://localhost:8080/product/all';
+
 let productController = [];
+
+let originalData = []; // Store the original data obtained from the backend
 
 function displayProduct()
 {
@@ -20,6 +23,9 @@ function displayProduct()
            .then(function(data) {
                console.log("2. receive data")
                console.log(data);
+
+               originalData = data; // Store the original data
+
                data.forEach(function (product) {
 
                    const productObj = {
@@ -120,7 +126,7 @@ displayProduct();
 
 function filterProductsByCategory(category) {
     // Filter productController array by product category
-    let filteredProducts = productController.filter(product => product.productCategory === category);
+    let filteredProducts = originalData.filter(product => product.productCategory === category);
 
     // Update the productController with filtered products
     productController = filteredProducts;
