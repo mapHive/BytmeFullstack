@@ -46,6 +46,9 @@ function displayProduct()
             // Display all the objects from the productController array
              renderProductPage();
 
+             // After products are rendered, get the category from the URL and filter the products - If getCategoryFromUrlAndDisplayProducts is called before fetch has completed, filterProductsByCategory won't have the correct data to work with. That's why it's suggested to call getCategoryFromUrlAndDisplayProducts inside the .then of fetch to ensure it happens after the data is completely fetched.
+                         getCategoryFromUrlAndDisplayProducts();
+
            })
            .catch(function(error) {
                console.log(error);
@@ -120,7 +123,7 @@ function addProduct(productName, productPrice, productQuantity, productCategory,
         });
 }
 
-displayProduct();
+//displayProduct();
 
 // To filter categories
 
@@ -155,3 +158,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+displayProduct();
+
+// Filter by category based on what is inputted from category.html
+
+function getCategoryFromUrlAndDisplayProducts() {
+    let url = new URL(window.location.href);
+    let category = url.searchParams.get("category");
+
+    if (category) {
+        filterProductsByCategory(category);
+    }
+}
+
+getCategoryFromUrlAndDisplayProducts();
