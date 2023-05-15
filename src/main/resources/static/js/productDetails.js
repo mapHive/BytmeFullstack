@@ -18,18 +18,18 @@ function displayProduct() {
             .then(function (data) {
               console.log("2. receive data");
               console.log(data);
-              const product = data.find((p) => p.productId === parseInt(productId));
+              const productSingle = data.find((product) => product.productId === parseInt(productId));
 
-              if (product) {
+              if (productSingle) {
                 const productObj = {
-                  productId: product.productId,
-                  productName: product.productName,
-                  productPrice: product.productPrice,
-                  productQuantity: product.productQuantity,
-                  productCategory: product.productCategory,
-                  productDescription: product.productDescription,
-                  productOptions: product.productOptions,
-                  productImages: product.productImages,
+                  productId: productSingle.productId,
+                  productName: productSingle.productName,
+                  productPrice: productSingle.productPrice,
+                  productQuantity: productSingle.productQuantity,
+                  productCategory: productSingle.productCategory,
+                  productDescription: productSingle.productDescription,
+                  productOptions: productSingle.productOptions,
+                  productImages: productSingle.productImages,
                 };
 
                 productDetails.push(productObj);
