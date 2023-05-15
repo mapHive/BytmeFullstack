@@ -4,38 +4,45 @@ const addAPI= 'http://localhost:8080/product/add';
 const displayAPI = 'http://localhost:8080/product/all';
 let productDetails = [];
 
-function displayProduct()
-{
-//fetch data from database using the REST API endpoint from Spring Boot
-       fetch(displayAPI)
-           .then((resp) => resp.json())
-           .then(function(data) {
-               console.log("2. receive data")
-               console.log(data);
-               data.forEach(function (product) {
+function getProductIdFromUrl() {
+  const urlParam = new URLSearchParam(window.location.search);
+  return urlParam.get('productId');
+}
 
-                   const productObj = {
-                       productId: product.productId,
-                       productName: product.productName,
-                       productPrice: product.productPrice,
-                       productQuantity: product.productQuantity,
-                       productCategory: product.productCategory,
-                       productDescription: product.productDescription,
-                       productOptions: product.productOptions,
-                       productImages: product.productImages
-                  };
+function displayProduct() {
+  const productId = getProductIdFromUrl();
 
-                  // This array consists of 12 objects
-                   productDetails.push(productObj);
-             });
+  //fetch data from database using the REST API endpoint from Spring Boot
+          fetch(displayAPI)
+            .then((resp) => resp.json())
+            .then(function (data) {
+              console.log("2. receive data");
+              console.log(data);
+              const product = data.find((p) => p.productId === parseInt(productId));
 
-            // Display all the objects from the productController array
-             renderProductPage();
+              if (product) {
+                const productObj = {
+                  productId: product.productId,
+                  productName: product.productName,
+                  productPrice: product.productPrice,
+                  productQuantity: product.productQuantity,
+                  productCategory: product.productCategory,
+                  productDescription: product.productDescription,
+                  productOptions: product.productOptions,
+                  productImages: product.productImages,
+                };
 
-           })
-           .catch(function(error) {
-               console.log(error);
-           });
+                productDetails.push(productObj);
+
+                // Display the product with the given productId
+                renderProductPage();
+              } else {
+                console.log(`Product with id ${productId} not found`);
+              }
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
 }
 
 function renderProductPage() {

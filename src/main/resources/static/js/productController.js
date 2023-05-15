@@ -61,7 +61,7 @@ function renderProductPage() {
                           <h5 class="card-title">${productController[i].productName}</h5>
                           <h5 class="price">$${productController[i].productPrice}</h5>
                           <p class="card-text py-3">${productController[i].productDescription}</p>
-                          <a th:href="@{product}" class="btn btn-primary">View Product</a>
+                          <a href="/product" data-product-id="${productController[i].productId}" class="btn btn-primary view-product-btn">View Product</a>
                       </div>
                   </div>
             </div>
@@ -70,7 +70,17 @@ function renderProductPage() {
 
     document.querySelector("#row").innerHTML = display;
 
-}
+      // Add event listeners for 'View Product' buttons
+      const viewProductButtons = document.querySelectorAll('.view-product-btn');
+
+      viewProductButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          const productId = event.currentTarget.getAttribute('data-product-id');
+          window.location.href = `/product?productId=${productId}`;
+        });
+      });
+    }
 
 //addProduct(name, description, imageUrl, style, price, storeImage);
 function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, imageObject)
