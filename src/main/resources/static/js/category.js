@@ -13,3 +13,7 @@ function setupCategoryListeners() {
         });
     });
 }
+
+window.onload = function() {
+    setupCategoryListeners();
+};
