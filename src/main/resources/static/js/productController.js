@@ -178,8 +178,10 @@
         let category = url.searchParams.get("category");
 
         if (category) {
-            filterProductsByCategory(category);
-        }
+                if (category === 'all') {
+                    displayAllProducts();
+                } else {
+                    filterProductsByCategory(category);
+                }
+            }
     }
-
-    getCategoryFromUrlAndDisplayProducts();
