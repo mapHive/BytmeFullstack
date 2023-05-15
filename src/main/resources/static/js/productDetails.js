@@ -100,7 +100,7 @@ let imagesHTML = "";
                                                <div class="row">
 
                                                    <div class="col price my-4">
-                                                       <h3>${singleProduct.productPrice}</h3 >
+                                                       <h3>$${singleProduct.productPrice}</h3 >
                                                    </div >
 
                                                    <div class="container-fluid product-description">
