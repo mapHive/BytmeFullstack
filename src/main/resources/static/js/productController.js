@@ -115,3 +115,37 @@ function addProduct(productName, productPrice, productQuantity, productCategory,
 }
 
 displayProduct();
+
+// To filter categories
+
+function filterProductsByCategory(category) {
+    // Filter productController array by product category
+    let filteredProducts = productController.filter(product => product.productCategory === category);
+
+    // Update the productController with filtered products
+    productController = filteredProducts;
+
+    // Rerender the products on the page
+    renderProductPage();
+}
+
+
+// Event listener to start filtering based on category
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all category items
+    let categoryItems = document.querySelectorAll('.list-group-item');
+
+    // Attach click event listener to each category item
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Get category from data-text attribute
+            let category = e.currentTarget.id;
+
+            // Filter products by category
+            filterProductsByCategory(category);
+        });
+    });
+});
