@@ -1,7 +1,3 @@
-
-// Development APIs
-const addAPI= 'http://localhost:8080/product/add';
-const displayAPI = 'http://localhost:8080/product/all';
 let productDetails = [];
 
 function getProductIdFromUrl() {
@@ -9,7 +5,7 @@ function getProductIdFromUrl() {
   return urlParams.get('productId');
 }
 
-function displayProduct() {
+function displayProductDetails () {
   const productId = getProductIdFromUrl();
 
   //fetch data from database using the REST API endpoint from Spring Boot
@@ -35,7 +31,7 @@ function displayProduct() {
                 productDetails.push(productObj);
 
                 // Display the product with the given productId
-                renderProductPage();
+                renderProductDetailsPage();
               } else {
                 console.log(`Product with id ${productId} not found`);
               }
@@ -45,7 +41,7 @@ function displayProduct() {
             });
 }
 
-function renderProductPage() {
+function renderProductDetailsPage() {
 
 let display = "";
 let singleProduct = productDetails[0];
@@ -125,3 +121,5 @@ let imagesHTML = "";
        document.querySelector("#row").innerHTML = display;
 
    }
+
+   displayProductDetails();

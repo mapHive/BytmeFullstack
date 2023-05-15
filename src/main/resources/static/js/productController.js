@@ -113,3 +113,5 @@ function addProduct(productName, productPrice, productQuantity, productCategory,
             alert("Error adding item to Product")
         });
 }
+
+displayProduct();

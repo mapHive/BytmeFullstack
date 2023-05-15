@@ -4,7 +4,7 @@ const addAPI= 'http://localhost:8080/product/add';
 const displayAPI = 'http://localhost:8080/product/all';
 let featuredItems = [];
 
-function displayProduct()
+function displayFeaturedItems ()
 {
 //fetch data from database using the REST API endpoint from Spring Boot
        fetch(displayAPI)
@@ -30,7 +30,7 @@ function displayProduct()
              });
 
             // Display all the objects from the productController array
-             renderProductPage();
+             renderFeaturedItems();
 
            })
            .catch(function(error) {
@@ -38,7 +38,7 @@ function displayProduct()
            });
 }
 
-function renderProductPage() {
+function renderFeaturedItems() {
 
     let display = "";
     const maxItems= 8;
@@ -64,3 +64,5 @@ function renderProductPage() {
     document.querySelector("#row").innerHTML = display;
 
 }
+
+displayFeaturedItems();
