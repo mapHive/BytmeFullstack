@@ -34,11 +34,21 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item login">
-                        <a class="nav-link" th:href="@{login}">Login</a>
-                    </li>
-                </ul>
+<!--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--                    <li class="nav-item login">-->
+<!--                        <a class="nav-link" th:href="@{login}">Login</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+
+                <div sec:authorize="isAuthenticated()">
+                    <form id="logOut" th:action="@{/logout}" method="post">
+                        <li style="list-style-type: none;" class="nav-item"><a class="nav-link" onclick="document.getElementById('logOut').submit();">LOG OUT</a></li>
+                    </form>
+                </div>
+
+                <div sec:authorize="isAnonymous()">
+                    <li style="list-style-type: none;" class="nav-item"><a class="nav-link" th:href="@{login}">LOG IN</a></li>
+                </div>
             </div>
         </div>
     </div>
