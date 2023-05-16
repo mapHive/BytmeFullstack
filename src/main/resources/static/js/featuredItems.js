@@ -53,7 +53,7 @@ function renderFeaturedItems() {
                    <img src=${featuredItems[i].productImages} class="card-img-top py-3" alt="...">
                   <div class="card-body">
                    <h5 class="card-title">${featuredItems[i].productName}</h5>
-                   <p class="card-text py-3">${featuredItems[i].productDescription}</p>
+                   <h5 class="price">$${featuredItems[i].productPrice}</h5>
                 </div>
               </div>
               </a>

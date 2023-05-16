@@ -73,7 +73,6 @@
                           <div class="card-body">
                               <h5 class="card-title">${productController[i].productName}</h5>
                               <h5 class="price">$${productController[i].productPrice}</h5>
-                              <p class="card-text py-3">${productController[i].productDescription}</p>
                               <a href="/product" data-product-id="${productController[i].productId}" class="btn btn-primary view-product-btn">View Product</a>
                           </div>
                       </div>
