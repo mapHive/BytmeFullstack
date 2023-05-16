@@ -1,5 +1,9 @@
 package org.generation.byteme.controller;
 
+import com.azure.storage.blob.BlobClient;
+import com.azure.storage.blob.BlobContainerClient;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
 import org.generation.byteme.component.FileUploadUtil;
 import org.generation.byteme.controller.dto.ProductDTO;
 import org.generation.byteme.repository.entity.Product;
@@ -31,12 +35,37 @@ public class ProductController {
     public Iterable<Product> getProducts()
     {
 
-            for (Product images : productService.all())
-            {
-                String setURL = imageFolder + "/" + images.getProductImages();
-                images.setProductImages(setURL);
-            }
-            return productService.all();
+//            for (Product images : productService.all())
+//            {
+//                String setURL = imageFolder + "/" + images.getProductImages();
+//                images.setProductImages(setURL);
+//            }
+
+        /* To display images from the Server Container */
+        String connectStr2 = "DefaultEndpointsProtocol=https;AccountName=bytemeproductimages;AccountKey=RCEQbYIsfgPJkuyyUJlalGHXWVqtHLdf1mFpQ3Uip8HQtjj+VzivOPJ+/uqx3VWzuCNR3uQNtSpf+AStljB0ag==;EndpointSuffix=core.windows.net";
+        //System.out.println("Connect String: " + connectStr2);
+        BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(connectStr2).buildClient();
+        String containerName = "productimages";
+        BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
+
+
+        //productimagesping
+        BlobClient blobClient = containerClient.getBlobClient(productService.all().get(0).getProductImages());
+        System.out.println(blobClient);
+
+
+        //Loop through the ArrayList of itemService.all() and append the Blob url to the imageUrl
+        for (Product image: productService.all())
+        {
+            //path: productimagespring/prodimage/t-shirt1.jpg
+            String setURL = blobClient.getAccountUrl() + "/" + containerName + "/" + image.getProductImages();
+            image.setProductImages(setURL);
+            System.out.println(setURL);
+        }
+
+        //return in the Controller represents a response to the Client
+
+        return productService.all();
 
     }
 
