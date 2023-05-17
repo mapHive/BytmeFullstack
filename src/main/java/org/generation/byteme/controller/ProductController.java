@@ -49,18 +49,26 @@ public class ProductController {
         BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
 
 
-        //productimagesping
-        BlobClient blobClient = containerClient.getBlobClient(productService.all().get(0).getProductImages());
-        System.out.println(blobClient);
-
-
-        //Loop through the ArrayList of itemService.all() and append the Blob url to the imageUrl
-        for (Product image: productService.all())
+        //Loop through the ArrayList of productService.all() and append the Blob url to the imageUrls
+        for (Product product: productService.all())
         {
-            //path: productimagespring/prodimage/t-shirt1.jpg
-            String setURL = blobClient.getAccountUrl() + "/" + containerName + "/" + image.getProductImages();
-            image.setProductImages(setURL);
-            System.out.println(setURL);
+            // For productImage1
+            BlobClient blobClient1 = containerClient.getBlobClient(product.getProductImage1());
+            String setURL1 = blobClient1.getAccountUrl() + "/" + containerName + "/" + product.getProductImage1();
+            product.setProductImage1(setURL1);
+            System.out.println(setURL1);
+
+            // For productImage2
+            BlobClient blobClient2 = containerClient.getBlobClient(product.getProductImage2());
+            String setURL2 = blobClient2.getAccountUrl() + "/" + containerName + "/" + product.getProductImage2();
+            product.setProductImage2(setURL2);
+            System.out.println(setURL2);
+
+            // For productImage3
+            BlobClient blobClient3 = containerClient.getBlobClient(product.getProductImage3());
+            String setURL3 = blobClient3.getAccountUrl() + "/" + containerName + "/" + product.getProductImage3();
+            product.setProductImage3(setURL3);
+            System.out.println(setURL3);
         }
 
         //return in the Controller represents a response to the Client
@@ -84,7 +92,25 @@ public class ProductController {
 
     // Set up post mapping and request
 
-    @CrossOrigin
+//    @CrossOrigin
+//    @PostMapping("/add")
+//    public void save(@RequestParam(name="productName", required = true) String productName,
+//                     @RequestParam(name="productPrice", required = true) double productPrice,
+//                     @RequestParam(name="productQuantity", required = true) Integer productQuantity,
+//                     @RequestParam(name="productCategory", required = true) String productCategory,
+//                     @RequestParam(name="productDescription", required = true) String productDescription,
+//                     @RequestParam(name="productOptions", required = false) String productOptions,
+//                     @RequestParam(name="productImages", required = true) String productImages,
+//                     @RequestParam("imagefile") MultipartFile multipartFile) throws IOException
+//    {
+//        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+//
+//        FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);
+//
+//        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages);
+//        productService.save(new Product(productDto));
+//    }
+
     @PostMapping("/add")
     public void save(@RequestParam(name="productName", required = true) String productName,
                      @RequestParam(name="productPrice", required = true) double productPrice,
@@ -92,14 +118,21 @@ public class ProductController {
                      @RequestParam(name="productCategory", required = true) String productCategory,
                      @RequestParam(name="productDescription", required = true) String productDescription,
                      @RequestParam(name="productOptions", required = false) String productOptions,
-                     @RequestParam(name="productImages", required = true) String productImages,
-                     @RequestParam("imagefile") MultipartFile multipartFile) throws IOException
+                     @RequestParam(name="productImage1", required = true) String productImage1,
+                     @RequestParam("imagefile1") MultipartFile multipartFile1,
+                     @RequestParam(name="productImage2", required = true) String productImage2,
+                     @RequestParam("imagefile2") MultipartFile multipartFile2,
+                     @RequestParam(name="productImage3", required = true) String productImage3,
+                     @RequestParam("imagefile3") MultipartFile multipartFile3) throws IOException
     {
-        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        FileUploadUtil.saveFile(imageFolder, productImage1, multipartFile1);
+        FileUploadUtil.saveFile(imageFolder, productImage2, multipartFile2);
+        FileUploadUtil.saveFile(imageFolder, productImage3, multipartFile3);
 
-        FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);
-
-        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages);
+        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImage1, productImage2, productImage3);
         productService.save(new Product(productDto));
     }
+
+
+
 }
