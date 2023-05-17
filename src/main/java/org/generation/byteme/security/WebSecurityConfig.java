@@ -67,7 +67,7 @@ public class WebSecurityConfig {
         // Which are the page(s) that need to have an Admin role before users can access
 
         http.authorizeHttpRequests((requests) -> requests
-                .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/about/**", "/common/**", "/form/**", "/homepage/**", "/login/**", "/shop/**", "/aboutus", "/category", "/index","/login", "/product", "/shop", "/productimages/**", "/product/**").permitAll()
+                .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/about/**", "/common/**", "/form/**", "/homepage/**", "/login/**", "/shop/**", "/aboutus", "/category", "/index","/login", "/product", "/shop", "/productimages/**", "/product/**", "/newsletter/**").permitAll()
                 .requestMatchers("/formpage/**").hasRole("ADMIN")
         );
         return http.build();
