@@ -95,7 +95,7 @@
         }
 
     //addProduct(name, description, imageUrl, style, price, storeImage);
-    function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, imageObject)
+    function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, productImage1, productImage2, productImage3)
     {
        const formData = new FormData();
        formData.append('productName', productName);
@@ -105,7 +105,9 @@
        formData.append('productDescription', productDescription);
        formData.append('productOptions',productOptions);
        formData.append('productImages',productImages);
-       formData.append('imagefile',imageObject);
+       formData.append('productImage1',productImage1);
+       formData.append('productImage2',productImage2);
+       formData.append('productImage3',productImage3);
 
       fetch(addAPI, {
             method: 'POST',

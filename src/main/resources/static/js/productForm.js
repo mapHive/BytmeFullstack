@@ -1,5 +1,7 @@
-// Global variable to store the image object
-let storeImage = ""
+// Global variables to store the image objects
+let storeImage1 = "";
+let storeImage2 = "";
+let storeImage3 = "";
 
 
 //Add an 'onsubmit' event listener for productform to add a product
@@ -23,18 +25,30 @@ newProductForm.addEventListener('submit', (event) => {
   //C:\fakepath\t-shirt_new.jpg
   //console.log(document.querySelector('#newItemImageFile').value + '\n' + "Hello world");
 
-  const productImages = document.querySelector('#newProductImages').value.replace("C:\\fakepath\\", "");
+  const productImage1 = document.querySelector('#newProductImage1').files[0];
+  const productImage2 = document.querySelector('#newProductImage2').files[0];
+  const productImage3 = document.querySelector('#newProductImage3').files[0];
+//  const productImages = document.querySelector('#newProductImages').value.replace("C:\\fakepath\\", "");
 
   // Calls a function from the productController.js to access the API to add items to the database
-  addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, storeImage)   //arguments
+  addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImage1, productImage2, productImage3, storeImage1, storeImage2, storeImage3)   //arguments
+  });   //arguments
 
 
+// select file inputs
+const input1 = document.querySelector('#newProductImage1');
+const input2 = document.querySelector('#newProductImage2');
+const input3 = document.querySelector('#newProductImage3');
+
+// add event listener for each input
+input1.addEventListener('change', () => {
+  storeImage1 = input1.files[0]; // Array of files for us to access
 });
 
+input2.addEventListener('change', () => {
+  storeImage2 = input2.files[0]; // Array of files for us to access
+});
 
-// select file input
-const input = document.querySelector('#newProductImages');
-// add event listener
-input.addEventListener('change', () => {
-  storeImage = input.files[0]; // Array of files for us to access
+input3.addEventListener('change', () => {
+  storeImage3 = input3.files[0]; // Array of files for us to access
 });
