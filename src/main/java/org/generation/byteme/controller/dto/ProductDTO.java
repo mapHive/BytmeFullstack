@@ -8,9 +8,11 @@ public class ProductDTO {
     private String productCategory;
     private String productDescription;
     private String productOptions;
-    private String productImages;
+    private String productImage1;
+    private String productImage2;
+    private String productImage3;
 
-    public ProductDTO(String productName, double productPrice, Integer productQuantity, String productCategory, String productDescription, String productOptions, String productImages)
+    public ProductDTO(String productName, double productPrice, Integer productQuantity, String productCategory, String productDescription, String productOptions, String productImage1, String productImage2, String productImage3)
     {
         this.productName = productName;
         this.productPrice = productPrice;
@@ -18,7 +20,9 @@ public class ProductDTO {
         this.productCategory = productCategory;
         this.productDescription = productDescription;
         this.productOptions = productOptions;
-        this.productImages = productImages;
+        this.productImage1 = productImage1;
+        this.productImage2 = productImage2;
+        this.productImage3 = productImage3;
     }
 
     public String getProductName() {
@@ -69,12 +73,27 @@ public class ProductDTO {
         this.productOptions = productOptions;
     }
 
-    public String getProductImages() {
-        return productImages;
+    public String getProductImage1() {
+        return productImage1;
     }
 
-    public void setProductImages(String productImages) {
-        this.productImages = productImages;
+    public void setProductImage1(String productImage1) {
+        this.productImage1 = productImage1;
     }
 
+    public String getProductImage2() {
+        return productImage2;
+    }
+
+    public void setProductImage2(String productImage2) {
+        this.productImage2 = productImage2;
+    }
+
+    public String getProductImage3() {
+        return productImage3;
+    }
+
+    public void setProductImage3(String productImage3) {
+        this.productImage3 = productImage3;
+    }
 }

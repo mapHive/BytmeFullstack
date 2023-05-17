@@ -19,7 +19,9 @@ public class Product {
     private String productCategory;
     private String productDescription;
     private String productOptions;
-    private String productImages;
+    private String productImage1;
+    private String productImage2;
+    private String productImage3;
 
     public Product() {
 
@@ -33,7 +35,9 @@ public Product(ProductDTO productDto)
     this.productCategory = productDto.getProductCategory();
     this.productDescription = productDto.getProductDescription();
     this.productOptions = productDto.getProductOptions();
-    this.productImages = productDto.getProductImages();
+    this.productImage1 = productDto.getProductImage1();
+    this.productImage2 = productDto.getProductImage2();
+    this.productImage3 = productDto.getProductImage3();
 }
 
     public Integer getProductId() {
@@ -92,12 +96,28 @@ public Product(ProductDTO productDto)
         this.productOptions = productOptions;
     }
 
-    public String getProductImages() {
-        return productImages;
+    public String getProductImage1() {
+        return productImage1;
     }
 
-    public void setProductImages(String productImages) {
-        this.productImages = productImages;
+    public void setProductImage1(String productImage1) {
+        this.productImage1 = productImage1;
+    }
+
+    public String getProductImage2() {
+        return productImage2;
+    }
+
+    public void setProductImage2(String productImage2) {
+        this.productImage2 = productImage2;
+    }
+
+    public String getProductImage3() {
+        return productImage3;
+    }
+
+    public void setProductImage3(String productImage3) {
+        this.productImage3 = productImage3;
     }
 
     @Override
@@ -110,7 +130,9 @@ public Product(ProductDTO productDto)
                 ", productCategory='" + productCategory + '\'' +
                 ", productDescription='" + productDescription + '\'' +
                 ", productOptions='" + productOptions + '\'' +
-                ", productImages='" + productImages + '\'' +
+                ", productImage1='" + productImage1 + '\'' +
+                ", productImage2='" + productImage2 + '\'' +
+                ", productImage3='" + productImage3 + '\'' +
                 '}';
     }
 }
