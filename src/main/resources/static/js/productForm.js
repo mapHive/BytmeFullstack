@@ -1,5 +1,5 @@
 // Global variable to store the image object
-let storeImage = "";
+let storeImage = ""
 
 
 //Add an 'onsubmit' event listener for productform to add a product
@@ -30,16 +30,6 @@ newProductForm.addEventListener('submit', (event) => {
 
 
 });
-
-// select file input
-const input = document.querySelector('#newProductImages');
-// add event listener
-input.addEventListener('change', () => { storeImage = Array.from(input.files);  // Convert FileList to array
-});
-
-const formData = new FormData(); storeImage.forEach((file, i) => { formData.append(`imagefiles[${i}]`, file); });
-// Then use formData in your fetch or AJAX request
-
 
 
 // select file input
