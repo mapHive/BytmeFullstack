@@ -13,7 +13,7 @@ public class FileUploadUtil {
 
     public static String saveFile(String uploadDir, String fileName, MultipartFile multipartFile) throws IOException
     {
-        String connectStr2 = "...";
+        String connectStr2 = "DefaultEndpointsProtocol=https;AccountName=bytemeproductimages;AccountKey=RCEQbYIsfgPJkuyyUJlalGHXWVqtHLdf1mFpQ3Uip8HQtjj+VzivOPJ+/uqx3VWzuCNR3uQNtSpf+AStljB0ag==;EndpointSuffix=core.windows.net";
         BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(connectStr2).buildClient();
         String containerName = "productimages";
         BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
