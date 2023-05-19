@@ -18,14 +18,15 @@ public class FileUploadUtil {
         String containerName = "productimages";
         BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
 
-        fileName = StringUtils.cleanPath(fileName);
-        BlobClient blobClient = containerClient.getBlobClient(fileName);
+        String cleanedFileName = StringUtils.cleanPath(fileName);
+        BlobClient blobClient = containerClient.getBlobClient(cleanedFileName);
 
         InputStream inputStream = multipartFile.getInputStream();
         blobClient.upload(inputStream, multipartFile.getSize(), true);
 
         return blobClient.getBlobUrl();
     }
+
 }
 
 //public class FileUploadUtil {
