@@ -25,9 +25,9 @@ newProductForm.addEventListener('submit', (event) => {
   //C:\fakepath\t-shirt_new.jpg
   //console.log(document.querySelector('#newItemImageFile').value + '\n' + "Hello world");
 
-  const productImage1 = document.querySelector('#newProductImage1').files[0];
-  const productImage2 = document.querySelector('#newProductImage2').files[0];
-  const productImage3 = document.querySelector('#newProductImage3').files[0];
+  const productImage1 = document.querySelector('#newProductImage1').value.replace("C:\\fakepath\\", "");
+  const productImage2 = document.querySelector('#newProductImage2').value.replace("C:\\fakepath\\", "");
+  const productImage3 = document.querySelector('#newProductImage3').value.replace("C:\\fakepath\\", "");
 //  const productImages = document.querySelector('#newProductImages').value.replace("C:\\fakepath\\", "");
 
   // Calls a function from the productController.js to access the API to add items to the database
