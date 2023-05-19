@@ -104,7 +104,6 @@
        formData.append('productCategory', productCategory);
        formData.append('productDescription', productDescription);
        formData.append('productOptions',productOptions);
-       formData.append('productImages',productImages);
        formData.append('productImage1',productImage1);
        formData.append('productImage2',productImage2);
        formData.append('productImage3',productImage3);
