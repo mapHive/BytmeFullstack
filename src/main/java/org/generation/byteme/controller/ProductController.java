@@ -92,25 +92,6 @@ public class ProductController {
 
     // Set up post mapping and request
 
-//    @CrossOrigin
-//    @PostMapping("/add")
-//    public void save(@RequestParam(name="productName", required = true) String productName,
-//                     @RequestParam(name="productPrice", required = true) double productPrice,
-//                     @RequestParam(name="productQuantity", required = true) Integer productQuantity,
-//                     @RequestParam(name="productCategory", required = true) String productCategory,
-//                     @RequestParam(name="productDescription", required = true) String productDescription,
-//                     @RequestParam(name="productOptions", required = false) String productOptions,
-//                     @RequestParam(name="productImages", required = true) String productImages,
-//                     @RequestParam("imagefile") MultipartFile multipartFile) throws IOException
-//    {
-//        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-//
-//        FileUploadUtil.saveFile(imageFolder, fileName, multipartFile);
-//
-//        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages);
-//        productService.save(new Product(productDto));
-//    }
-
     @PostMapping("/add")
     public void save(@RequestParam(name="productName", required = true) String productName,
                      @RequestParam(name="productPrice", required = true) double productPrice,
