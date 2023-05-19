@@ -36,7 +36,7 @@
                            productCategory: product.productCategory,
                            productDescription: product.productDescription,
                            productOptions: product.productOptions,
-                           productImages: product.productImages
+                           productImage1: product.productImage1
                       };
 
                       // This array consists of 12 objects
@@ -68,7 +68,7 @@
             display += `
                 <div class="col-lg-3">
                       <div class="card">
-                          <img src=${productController[i].productImages} class="card-img-top py-3"
+                          <img src=${productController[i].productImage1} class="card-img-top py-3"
                               alt="image" >
                           <div class="card-body">
                               <h5 class="card-title">${productController[i].productName}</h5>
@@ -95,7 +95,7 @@
         }
 
     //addProduct(name, description, imageUrl, style, price, storeImage);
-    function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImages, productImage1, productImage2, productImage3)
+    function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImage1, productImage2, productImage3, imageObject1, imageObject2, imageObject3)
     {
        const formData = new FormData();
        formData.append('productName', productName);
@@ -107,6 +107,9 @@
        formData.append('productImage1',productImage1);
        formData.append('productImage2',productImage2);
        formData.append('productImage3',productImage3);
+       formData.append('imagefile1',imageObject1);
+       formData.append('imagefile2',imageObject2);
+       formData.append('imagefile3',imageObject3);
 
       fetch(addAPI, {
             method: 'POST',
