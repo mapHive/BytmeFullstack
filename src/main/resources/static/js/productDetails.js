@@ -47,13 +47,13 @@ function renderProductDetailsPage() {
 
 let display = "";
 let singleProduct = productDetails[0];
-let productImages = [productImage1, productImage2, productImage3];
+let productImages = [singleProduct.productImage1, singleProduct.productImage2, singleProduct.productImage3];
 
 let imagesHTML = "";
-           for (let j = 0; j < singleProduct.productImages.length; j++) {
+           for (let j = 0; j < productImages.length; j++) {
                imagesHTML += `
                <div class="carousel-item ${j === 0 ? 'active' : ''}">
-                 <img src="${singleProduct.productImages[j]}" class="d-block w-100 image-fluid" alt="..." />
+                 <img src="${productImages[j]}" class="d-block w-100 image-fluid" alt="..." />
                </div>`;
            }
 
