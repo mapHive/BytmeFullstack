@@ -25,7 +25,9 @@ function displayProductDetails () {
                   productCategory: productSingle.productCategory,
                   productDescription: productSingle.productDescription,
                   productOptions: productSingle.productOptions,
-                  productImages: productSingle.productImages,
+                  productImage1: productSingle.productImage1,
+                  productImage2: productSingle.productImage2,
+                  productImage3: productSingle.productImage3,
                 };
 
                 productDetails.push(productObj);
@@ -45,6 +47,7 @@ function renderProductDetailsPage() {
 
 let display = "";
 let singleProduct = productDetails[0];
+let productImages = [productImage1, productImage2, productImage3];
 
 let imagesHTML = "";
            for (let j = 0; j < singleProduct.productImages.length; j++) {

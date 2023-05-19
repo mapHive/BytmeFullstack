@@ -64,12 +64,11 @@
         let display = "";
 
         for (let i = 0; i < productController.length; i++) {
-
             display += `
                 <div class="col-lg-3">
                       <div class="card">
                           <img src=${productController[i].productImage1} class="card-img-top py-3"
-                              alt="image" >
+                             alt="image" >
                           <div class="card-body">
                               <h5 class="card-title">${productController[i].productName}</h5>
                               <h5 class="price">$${productController[i].productPrice}</h5>
