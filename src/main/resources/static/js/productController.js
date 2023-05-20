@@ -167,6 +167,9 @@
 
                 // Rerender the products on the page
                             renderProductPage();
+
+                // Update the URL
+                            history.pushState(null, null, `?category=${category}`);
             });
         });
     });
