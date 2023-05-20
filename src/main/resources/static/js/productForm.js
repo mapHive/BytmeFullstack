@@ -18,7 +18,6 @@ newProductForm.addEventListener('submit', (event) => {
   const productQuantity = document.querySelector('#newProductQuantity').value;
   const productCategory = document.querySelector('#newProductCategory').value;
   const productDescription = document.querySelector('#newProductDescription').value;
-  const productOptions = document.querySelector('#newProductOptions').value;
 
   //Browser security will not be able to track/store the actual path of where you choose your image
   // C:/Users/Desktop/t-shirt_new.jpg
@@ -31,7 +30,7 @@ newProductForm.addEventListener('submit', (event) => {
 //  const productImages = document.querySelector('#newProductImages').value.replace("C:\\fakepath\\", "");
 
   // Calls a function from the productController.js to access the API to add items to the database
-  addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImage1, productImage2, productImage3, storeImage1, storeImage2, storeImage3)   //arguments
+  addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productImage1, productImage2, productImage3, storeImage1, storeImage2, storeImage3)   //arguments
   });   //arguments
 
 

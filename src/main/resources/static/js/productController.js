@@ -35,7 +35,6 @@
                            productQuantity: product.productQuantity,
                            productCategory: product.productCategory,
                            productDescription: product.productDescription,
-                           productOptions: product.productOptions,
                            productImage1: product.productImage1
                       };
 
@@ -94,7 +93,7 @@
         }
 
     //addProduct(name, description, imageUrl, style, price, storeImage);
-    function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImage1, productImage2, productImage3, imageObject1, imageObject2, imageObject3)
+    function addProduct(productName, productPrice, productQuantity, productCategory, productDescription, productImage1, productImage2, productImage3, imageObject1, imageObject2, imageObject3)
     {
        const formData = new FormData();
        formData.append('productName', productName);
@@ -102,7 +101,6 @@
        formData.append('productQuantity', productQuantity);
        formData.append('productCategory', productCategory);
        formData.append('productDescription', productDescription);
-       formData.append('productOptions',productOptions);
        formData.append('productImage1',productImage1);
        formData.append('productImage2',productImage2);
        formData.append('productImage3',productImage3);

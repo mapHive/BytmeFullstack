@@ -24,7 +24,6 @@ function displayProductDetails () {
                   productQuantity: productSingle.productQuantity,
                   productCategory: productSingle.productCategory,
                   productDescription: productSingle.productDescription,
-                  productOptions: productSingle.productOptions,
                   productImage1: productSingle.productImage1,
                   productImage2: productSingle.productImage2,
                   productImage3: productSingle.productImage3,

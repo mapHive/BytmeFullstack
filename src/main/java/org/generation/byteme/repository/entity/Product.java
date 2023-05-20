@@ -18,7 +18,6 @@ public class Product {
     private Integer productQuantity;
     private String productCategory;
     private String productDescription;
-    private String productOptions;
     private String productImage1;
     private String productImage2;
     private String productImage3;
@@ -34,7 +33,6 @@ public Product(ProductDTO productDto)
     this.productQuantity = productDto.getProductQuantity();
     this.productCategory = productDto.getProductCategory();
     this.productDescription = productDto.getProductDescription();
-    this.productOptions = productDto.getProductOptions();
     this.productImage1 = productDto.getProductImage1();
     this.productImage2 = productDto.getProductImage2();
     this.productImage3 = productDto.getProductImage3();
@@ -88,14 +86,6 @@ public Product(ProductDTO productDto)
         this.productDescription = productDescription;
     }
 
-    public String getProductOptions() {
-        return productOptions;
-    }
-
-    public void setProductOptions(String productOptions) {
-        this.productOptions = productOptions;
-    }
-
     public String getProductImage1() {
         return productImage1;
     }
@@ -129,7 +119,6 @@ public Product(ProductDTO productDto)
                 ", productQuantity=" + productQuantity +
                 ", productCategory='" + productCategory + '\'' +
                 ", productDescription='" + productDescription + '\'' +
-                ", productOptions='" + productOptions + '\'' +
                 ", productImage1='" + productImage1 + '\'' +
                 ", productImage2='" + productImage2 + '\'' +
                 ", productImage3='" + productImage3 + '\'' +

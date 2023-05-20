@@ -34,7 +34,6 @@ function displayRelatedItems() {
                         productQuantity: product.productQuantity,
                         productCategory: product.productCategory,
                         productDescription: product.productDescription,
-                        productOptions: product.productOptions,
                         productImages: product.productImages,
                     };
 

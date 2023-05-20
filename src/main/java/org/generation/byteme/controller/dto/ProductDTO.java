@@ -7,19 +7,17 @@ public class ProductDTO {
     private Integer productQuantity;
     private String productCategory;
     private String productDescription;
-    private String productOptions;
     private String productImage1;
     private String productImage2;
     private String productImage3;
 
-    public ProductDTO(String productName, double productPrice, Integer productQuantity, String productCategory, String productDescription, String productOptions, String productImage1, String productImage2, String productImage3)
+    public ProductDTO(String productName, double productPrice, Integer productQuantity, String productCategory, String productDescription, String productImage1, String productImage2, String productImage3)
     {
         this.productName = productName;
         this.productPrice = productPrice;
         this.productQuantity = productQuantity;
         this.productCategory = productCategory;
         this.productDescription = productDescription;
-        this.productOptions = productOptions;
         this.productImage1 = productImage1;
         this.productImage2 = productImage2;
         this.productImage3 = productImage3;
@@ -63,14 +61,6 @@ public class ProductDTO {
 
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
-    }
-
-    public String getProductOptions() {
-        return productOptions;
-    }
-
-    public void setProductOptions(String productOptions) {
-        this.productOptions = productOptions;
     }
 
     public String getProductImage1() {

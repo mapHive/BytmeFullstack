@@ -110,7 +110,7 @@ public class ProductController {
         FileUploadUtil.saveFile(imageFolder, productImage2, multipartFile2);
         FileUploadUtil.saveFile(imageFolder, productImage3, multipartFile3);
 
-        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productOptions, productImage1, productImage2, productImage3);
+        ProductDTO productDto = new ProductDTO(productName, productPrice, productQuantity, productCategory, productDescription, productImage1, productImage2, productImage3);
         productService.save(new Product(productDto));
     }
 
