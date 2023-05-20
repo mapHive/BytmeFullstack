@@ -102,10 +102,12 @@ let imagesHTML = "";
                                                        <h3>$${singleProduct.productPrice}</h3 >
                                                    </div >
 
-                                                   <div class="container-fluid product-atc-btn mt-4">
-                                                       <button type="button" class="btn">
-                                                           <a href="#">Add to Cart</a>
-                                                       </button>
+                                                   <div class="options col my-3">
+                                                       <div class="btn-group">
+                                                           <select id="options" required>
+                                                                <option value="options">Options</option>
+                                                           </select>
+                                                       </div>
                                                    </div>
 
                                                    <div class="container-fluid product-description">
@@ -114,6 +116,12 @@ let imagesHTML = "";
                                                                ${singleProduct.productDescription}
                                                        </pre>
                                                    </div>
+
+                                                   <div class="container-fluid product-atc-btn mt-4">
+                                                                                                          <button type="button" class="btn">
+                                                                                                              <a href="#">Add to Cart</a>
+                                                                                                          </button>
+                                                                                                      </div>
 
                                                </div>
                                            </div>
