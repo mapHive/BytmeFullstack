@@ -95,44 +95,30 @@ let imagesHTML = "";
                            </div>
 
                            <div class="container-fluid product-price-options">
-                                           <div class="container-fluid text-center">
-                                               <div class="row">
+                                  <div class="container-fluid text-center">
+                                        <div class="row">
 
-                                                   <div class="col price my-4">
-                                                       <h3>$${singleProduct.productPrice}</h3 >
-                                                   </div >
+                                              <div class="col price my-4">
+                                                   <h3>$${singleProduct.productPrice}</h3 >
+                                              </div>
 
-<<<<<<< HEAD
-                                                   <div class="product-atc-btn col my-3 container-fluid">
-                                                       <div class="btn-group">
-                                                            <button type="button" class="btn">
-                                                                <a href="#">Add to Cart</a>
-                                                            </button>
-=======
-                                                   <div class="options col my-3">
-                                                       <div class="btn-group">
-                                                           <select id="options" required>
-                                                                <option value="options">Options</option>
-                                                           </select>
->>>>>>> atc
-                                                       </div>
-                                                   </div>
+                                              <div class="container-fluid product-atc-btn col my-3 mt-4">
+                                                   <button type="button" class="btn">
+                                                        <a href="#">Add to Cart</a>
+                                                   </button>
+                                              </div>
 
                                                    <div class="container-fluid product-description">
 
-                                                       <pre class="py-3">
-                                                               ${singleProduct.productDescription}
-                                                       </pre>
+                                                        <pre class="py-3">
+                                                                ${singleProduct.productDescription}
+                                                        </pre>
                                                    </div>
 
-                                                   <div class="container-fluid product-atc-btn mt-4">
-                                                                                                          <button type="button" class="btn">
-                                                                                                              <a href="#">Add to Cart</a>
-                                                                                                          </button>
-                                                                                                      </div>
+                                              </div>
 
-                                               </div>
-                                           </div>
+                                         </div>
+                                  </div>
                            </div>
            </div>
        `
