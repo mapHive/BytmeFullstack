@@ -22,7 +22,7 @@ function displayFeaturedItems ()
                        productCategory: product.productCategory,
                        productDescription: product.productDescription,
                        productOptions: product.productOptions,
-                       productImages: product.productImages
+                       productImage1: product.productImage1
                   };
 
                   // This array consists of 12 objects
@@ -48,9 +48,9 @@ function renderFeaturedItems() {
 
         display += `
            <div class="col my-5">
-                <a th:href="@{product}">
-                  <div class="card" style="width: 18rem;">
-                   <img src=${featuredItems[i].productImages} class="card-img-top py-3" alt="...">
+                <a href="/product" class="view-product-card" data-product-id="${featuredItems[i].productId}">
+                  <div class="card" style="width: 18rem;" >
+                   <img src=${featuredItems[i].productImage1} class="card-img-top py-3" alt="...">
                   <div class="card-body">
                    <h5 class="card-title">${featuredItems[i].productName}</h5>
                    <h5 class="price">$${featuredItems[i].productPrice}</h5>
@@ -63,6 +63,16 @@ function renderFeaturedItems() {
 
     document.querySelector("#row").innerHTML = display;
 
+    // Add event listeners for 'Featured Item Card' buttons
+              const viewProductCards = document.querySelectorAll('.view-product-card');
+
+              viewProductCards.forEach((card) => {
+                card.addEventListener('click', (event) => {
+                  event.preventDefault();
+                  const productId = event.currentTarget.getAttribute('data-product-id');
+                  window.location.href = `/product?productId=${productId}`;
+                });
+              });
 }
 
 displayFeaturedItems();
