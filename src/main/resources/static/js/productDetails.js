@@ -102,17 +102,17 @@ let imagesHTML = "";
                                                        <h3>$${singleProduct.productPrice}</h3 >
                                                    </div >
 
+                                                   <div class="container-fluid product-atc-btn mt-4">
+                                                       <button type="button" class="btn">
+                                                           <a href="#">Add to Cart</a>
+                                                       </button>
+                                                   </div>
+
                                                    <div class="container-fluid product-description">
 
                                                        <pre class="py-3">
                                                                ${singleProduct.productDescription}
                                                        </pre>
-                                                   </div>
-
-                                                   <div class="container-fluid product-atc-btn mt-4">
-                                                        <button type="button" class="btn">
-                                                                <a href="#">Add to Cart</a>
-                                                        </button>
                                                    </div>
 
                                                </div>
