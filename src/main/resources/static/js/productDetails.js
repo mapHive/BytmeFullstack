@@ -102,7 +102,7 @@ let imagesHTML = "";
                                                    <h3>$${singleProduct.productPrice}</h3 >
                                               </div>
 
-                                              <div class="container-fluid product-atc-btn col my-3 mt-4">
+                                              <div class="container-fluid product-atc-btn col my-4">
                                                    <button type="button" class="btn">
                                                         <a href="#">Add to Cart</a>
                                                    </button>
