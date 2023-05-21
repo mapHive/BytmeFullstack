@@ -13,7 +13,7 @@ document.getElementById('search-input').addEventListener('input', function() {
                     let resultItem = document.createElement('a');
                     resultItem.className = "dropdown-item";
                     resultItem.href = "#";  // Placeholder href value
-                    resultItem.textContent = product.name;
+                    resultItem.textContent = product.productName;
                     results.appendChild(resultItem);
                     console.log(resultItem);
 
