@@ -18,4 +18,6 @@ public interface ProductService {
     // Read an item from database based on productId
     Product findById(int productId);
 
+    ArrayList<Product> search(String keyword);
+
 }

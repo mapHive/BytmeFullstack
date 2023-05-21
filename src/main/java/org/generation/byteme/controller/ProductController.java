@@ -90,6 +90,12 @@ public class ProductController {
     @DeleteMapping( "/{id}" )
     public void delete( @PathVariable Integer id ) { productService.delete( id );}
 
+    @CrossOrigin
+    @GetMapping("/search")
+    public Iterable<Product> searchProducts(@RequestParam String keyword) {
+        return productService.search(keyword);
+    }
+
     // Set up post mapping and request
 
     @PostMapping("/add")

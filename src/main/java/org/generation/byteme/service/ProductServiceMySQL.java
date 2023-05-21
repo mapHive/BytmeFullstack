@@ -45,4 +45,8 @@ public class ProductServiceMySQL implements ProductService {
         Product productResponse = product.get();
         return productResponse;
     }
-}
+
+    @Override
+    public ArrayList<Product> search(String keyword) {
+        return new ArrayList<>(productRepository.search(keyword));
+    }}
