@@ -12,10 +12,16 @@ document.getElementById('search-input').addEventListener('input', function() {
                     // Append new results
                     let resultItem = document.createElement('a');
                     resultItem.className = "dropdown-item";
-                    resultItem.href = "/product/" + product.productId;
+                    resultItem.href = "#";  // Placeholder href value
                     resultItem.textContent = product.name;
                     results.appendChild(resultItem);
                     console.log(resultItem);
+
+                    // Add click event listener to the item
+                    resultItem.addEventListener('click', function(e) {
+                        e.preventDefault();  // Prevent default <a> tag behaviour
+                        window.location.href = `/product?productId=${product.productId}`;
+                    });
                 });
                 // Show results if hidden
                 results.style.display = 'block';
@@ -25,4 +31,5 @@ document.getElementById('search-input').addEventListener('input', function() {
         results.style.display = 'none';
     }
 });
+
 
