@@ -177,7 +177,7 @@ span.carousel-control-prev-icon,
     padding-left: 0px !important;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 500px) {
     #product-details>div {
       min-width: 200px !important;
     }

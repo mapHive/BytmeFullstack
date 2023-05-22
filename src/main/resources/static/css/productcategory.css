@@ -99,8 +99,35 @@ img:hover {
   height: 100%;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* .image_container:hover .overlay h3 {
   opacity: 1;
 } */
 
-@media only screen and (min-width: 990px) and (max-width: 1390px) {}
+@media (min-width: 1200px) and (max-width: 1470px) {
+    .col {
+         flex-basis: 33.3333%;
+    }
+ }
+
+  @media (min-width: 988px) and (max-width: 1200px) {
+     .col {
+          flex-basis: 50%;
+     }
+  }
+
+  @media only screen and (max-width: 400px) {
+      .product-category {
+        padding: 28px 0;
+      }
+    }

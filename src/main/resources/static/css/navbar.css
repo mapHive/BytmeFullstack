@@ -33,3 +33,20 @@
 .login-box {
     margin-right: 42px;
 }
+
+
+@media only screen and (max-width: 500px) {
+    #search-input {
+              width: 300px;
+              margin-bottom: 15px;
+          }
+    #results a {
+        font-size: .75em;
+    }
+    .navbar-brand {
+        margin: 0;
+    }
+    .navbar-toggler {
+        margin-right: 12px;
+    }
+}
