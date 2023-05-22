@@ -109,9 +109,9 @@ let imagesHTML = "";
 
                                                    <div class="container-fluid product-description">
 
-                                                        <pre class="py-3">
+                                                        <p class="py-3">
                                                                 ${singleProduct.productDescription}
-                                                        </pre>
+                                                        </p>
                                                    </div>
 
                                               </div>
