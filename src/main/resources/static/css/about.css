@@ -1,3 +1,7 @@
+.my-paragraph {
+    font-family: "Kanit";
+}
+
 .aboutuscontent .description .team .row .col .contact {
     display: flex;
 }
@@ -48,7 +52,10 @@
     max-width: 25%;
     flex-direction: column;
     text-align: center;
-    align-items: center;
+}
+
+.row {
+    justify-content: space-evenly;
 }
 
 .profile {
@@ -167,7 +174,17 @@
         transform: translate(0);
     }
 }
+
+@media only screen and (max-width: 1300px) {
+    .member {
+        flex-basis: 50%;
+    }
+}
+
 @media only screen and (max-width: 620px) {
+    .member {
+        flex-basis: 100%;
+    }
     .aboutuscontent {
         margin-top: 1rem;
     }
@@ -189,12 +206,9 @@
     .my-paragraph {
         font-size: 16px;
         line-height: 1.5;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 3;
-        /* Number of lines to show */
-        -webkit-box-orient: vertical;
-        display: -webkit-box;
+        height: 200px;
+        overflow-y: scroll;
+        font-family: "Kanit";
     }
 
     /* Styles for "Read more" button */
