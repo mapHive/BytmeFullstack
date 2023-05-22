@@ -34,7 +34,7 @@ function displayRelatedItems() {
                         productQuantity: product.productQuantity,
                         productCategory: product.productCategory,
                         productDescription: product.productDescription,
-                        productImages: product.productImages,
+                        productImage1: product.productImage1,
                     };
 
                     relatedItems.push(productObj);
@@ -64,10 +64,10 @@ function renderRelatedItems() {
               <div class="col my-5">
                     <a href="/product?productId=${relatedItems[i].productId}">
                     <div class="card" style="width: 18rem;">
-                        <img src=${relatedItems[i].productImages} class="card-img-top py-3" alt="...">
+                        <img src=${relatedItems[i].productImage1} class="card-img-top py-3" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${relatedItems[i].productName}</h5>
-                            <p class="card-text py-3">${relatedItems[i].productDescription}</p>
+                            <h5 class="price">$${relatedItems[i].productPrice}</h5>
                         </div>
                     </div>
                     </a>
