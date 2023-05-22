@@ -18,10 +18,18 @@
 
 .left-box {
     display: flex;
-    margin-right: 38px;
+    margin-right: 50px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.form-control {
+    width: 440px;
 }
 
 .login a {
     font-size: 1rem;
+}
+
+.login-box {
+    margin-right: 42px;
 }
