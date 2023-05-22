@@ -5,6 +5,8 @@
 }
 
 .row {
+    flex-wrap: wrap;
+
     gap: 1vw;
 }
 
@@ -13,6 +15,7 @@
     /* align-items: stretch; */
     align-items: center;
     justify-content: center;
+    flex-basis: 20%;
 }
 
 .card {

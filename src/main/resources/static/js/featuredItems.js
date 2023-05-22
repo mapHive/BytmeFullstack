@@ -43,6 +43,9 @@ function renderFeaturedItems() {
     const maxItems= 8;
     const itemCount = Math.min(featuredItems.length, maxItems);
 
+    // Shuffle the featuredItems array to randomize the order
+        featuredItems = shuffleArray(featuredItems);
+
     for (let i = 0; i < itemCount; i++) {
 
         display += `
@@ -72,6 +75,16 @@ function renderFeaturedItems() {
                   window.location.href = `/product?productId=${productId}`;
                 });
               });
+}
+
+// Function to shuffle an array using Fisher-Yates algorithm
+function shuffleArray(array) {
+    const newArray = array.slice();
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
 }
 
 displayFeaturedItems();
