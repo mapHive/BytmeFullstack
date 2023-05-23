@@ -37,7 +37,7 @@ h3 {
 .product-description {
   /* border: 2px solid pink; */
   /* Fix important flag */
-  height: 160px !important;
+  height: 220px !important;
   text-align: left;
   border-top: 2px solid #f2f2f2;
   overflow-y: scroll;
@@ -49,13 +49,13 @@ h3 {
   font-family: 'Kanit';
 }
 
-.product-atc-btn {
+.product-atc-button {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.product-atc-btn a {
+.product-atc-button a {
   text-decoration: none;
   font-size: 1.25rem;
   font-family: 'Montserrat', sans-serif !important;
@@ -63,7 +63,7 @@ h3 {
   color: black;
 }
 
-.product-atc-btn:hover a {
+.product-atc-button:hover a {
   color: white;
 }
 
@@ -84,6 +84,10 @@ h3 {
     height: 100%;
     line-height: 1.2;
   }
+
+  .product-description {
+    height: 110px !important;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -92,7 +96,7 @@ h3 {
   }
 
   .product-description {
-    height: 140px !important;
+    height: 110px !important;
   }
 }
 
@@ -175,7 +179,7 @@ h3 {
     height: 165px !important;
   }
 
-  .product-atc-btn {
+  .product-atc-button {
     margin-top: 2px !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
@@ -184,5 +188,19 @@ h3 {
   @media (min-width: 300px) and (max-width: 500px) {
     #product-details>div {
       min-width: 200px !important;
+    }
+
+    .product-description {
+        height: 80px;
+    }
+
+     .product-atc-button a {
+        font-size: 14px;
+     }
+
+     h2 {
+        font-size: 24px !important;
+        padding: 0 12px;
+     }
     }
 }

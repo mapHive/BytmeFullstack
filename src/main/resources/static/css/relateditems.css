@@ -8,6 +8,10 @@
     gap: 3vw;
 }
 
+.card img {
+    padding: 20px;
+}
+
 .related-items .col {
     display: flex;
     /* align-items: stretch; */

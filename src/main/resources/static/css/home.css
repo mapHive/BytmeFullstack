@@ -24,6 +24,10 @@
     border: none;
 }
 
+.card img {
+    padding: 20px;
+}
+
 .fly-in {
     animation: fly-in 3s ease-in-out forwards;
 }

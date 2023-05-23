@@ -101,9 +101,9 @@ let imagesHTML = "";
                                                    <h3>$${singleProduct.productPrice}</h3 >
                                               </div>
 
-                                              <div class="container-fluid product-atc-btn col my-4">
+                                              <div class="col product-atc-button my-4">
                                                    <button type="button" class="btn">
-                                                        <a href="#">Add to Cart</a>
+                                                       <a href="#">Add to Cart</a>
                                                    </button>
                                               </div>
 
