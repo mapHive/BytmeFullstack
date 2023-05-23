@@ -8,6 +8,11 @@
     gap: 3vw;
 }
 
+.card {
+    min-height: 330px;
+    max-height: 330px;
+}
+
 .card img {
     padding: 20px;
 }
