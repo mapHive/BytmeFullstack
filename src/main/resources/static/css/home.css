@@ -66,6 +66,10 @@ h2 {
     justify-content: center;
 }
 
+h5.price {
+    font-weight: 500;
+}
+
 .content p {
     height: 100%;
     line-height: 1.4;

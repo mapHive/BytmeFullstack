@@ -47,3 +47,7 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+h5.price {
+    font-weight: 500;
+}
