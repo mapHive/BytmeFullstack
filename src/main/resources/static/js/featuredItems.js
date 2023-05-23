@@ -51,7 +51,7 @@ function renderFeaturedItems() {
         display += `
            <div class="col my-5">
                 <a href="/product" class="view-product-card" data-product-id="${featuredItems[i].productId}">
-                  <div class="card" style="width: 18rem;" >
+                  <div class="card">
                    <img src=${featuredItems[i].productImage1} class="card-img-top py-3" alt="...">
                   <div class="card-body">
                    <h5 class="card-title">${featuredItems[i].productName}</h5>
