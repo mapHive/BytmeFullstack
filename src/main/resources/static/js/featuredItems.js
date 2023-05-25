@@ -1,7 +1,7 @@
 
 // Development APIs
-const addAPI= 'http://localhost:8080/product/add';
-const displayAPI = 'http://localhost:8080/product/all';
+const addAPI= 'https://bytemefullstack.azurewebsites.net/product/add';
+const displayAPI = 'https://bytemefullstack.azurewebsites.net/product/all';
 let featuredItems = [];
 
 function displayFeaturedItems ()
