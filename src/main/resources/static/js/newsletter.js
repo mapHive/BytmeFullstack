@@ -1,5 +1,5 @@
 // Assume 'addNewsletterEmailAPI' is the URL for the endpoint to add a new email to the newsletter list
-const addNewsletterEmailAPI = 'http://localhost:8080/newsletter/add';
+const addNewsletterEmailAPI = 'https://bytemefullstack.mysql.database.azure.com/newsletter/add';
 
     // Add an 'onsubmit' event listener for newsletter form
 const newsletterForm = document.querySelector('#newsletterForm');

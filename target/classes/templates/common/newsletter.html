@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>#</title>
+</head>
+
+<body>
+<section th:fragment="newsletter" id="newsletter">
+    <form id="newsletterForm">
+        <div class="form-content mb-3">
+            <label for="newsletterEmail" class="form-label">
+                <h3>Deals just for you</h3>
+            </label>
+            <input type="email" class="form-control" id="newsletterEmail" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">
+                <h4>Sign up to receive exclusive offers in your inbox!</h4>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+</section>
+</body>
+
+</html>

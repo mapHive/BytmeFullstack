@@ -1,0 +1,16 @@
+org/generation/byteme/security/WebSecurityConfig.class
+org/generation/byteme/BytemeApplication.class
+org/generation/byteme/service/ProductServiceMySQL.class
+org/generation/byteme/service/ProductService.class
+org/generation/byteme/service/NewsletterServiceMySQL.class
+org/generation/byteme/controller/ProductController.class
+org/generation/byteme/repository/ProductRepository.class
+org/generation/byteme/service/NewsletterService.class
+org/generation/byteme/controller/dto/ProductDTO.class
+org/generation/byteme/controller/dto/NewsletterDTO.class
+org/generation/byteme/repository/entity/Product.class
+org/generation/byteme/controller/NewsletterController.class
+org/generation/byteme/component/FileUploadUtil.class
+org/generation/byteme/repository/NewsletterRepository.class
+org/generation/byteme/security/MvcConfig.class
+org/generation/byteme/repository/entity/Newsletter.class

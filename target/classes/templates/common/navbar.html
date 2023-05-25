@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Navbar</title>
+</head>
+
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{index}"><img src="images/logo.png" width="80"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{category}">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{aboutus}">About Us</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item" id="addProductItem">
+                    <a class="nav-link" th:href="@{formpage}">Add Product</a>
+                </li>
+
+            </ul>
+            <div class="left-box">
+                <div class="search-box">
+                    <input class="form-control me-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
+                    <div id="results" class="dropdown-menu" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="login-box">
+                <div sec:authorize="isAuthenticated()">
+                    <form id="logOut" th:action="@{/logout}" method="post">
+                        <li style="list-style-type: none;" class="nav-item"><a class="nav-link" onclick="document.getElementById('logOut').submit();">Log Out</a></li>
+                    </form>
+                </div>
+
+                <div sec:authorize="isAnonymous()">
+                    <li style="list-style-type: none;" class="nav-item"><a class="nav-link" th:href="@{login}">Log In</a></li>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+</body>
+
+</html>

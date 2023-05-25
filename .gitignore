@@ -1,8 +1,10 @@
 HELP.md
-target/
+#target/
+src/test
+target/test-classes/
+target/maven-status/maven-compiler-plugin/testCompile
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+
 
 ### STS ###
 .apt_generated

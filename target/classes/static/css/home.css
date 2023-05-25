@@ -1,0 +1,82 @@
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 0 138px;
+}
+
+.row {
+    flex-wrap: wrap;
+
+    gap: 1vw;
+}
+
+.content .col {
+    display: flex;
+    /* align-items: stretch; */
+    align-items: center;
+    justify-content: center;
+    flex-basis: 20%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+    border: none;
+    width: 18rem;
+    min-height: 330px;
+    max-height: 330px;
+}
+
+.card img {
+    padding: 20px;
+    object-fit: contain;
+}
+
+.fly-in {
+    animation: fly-in 3s ease-in-out forwards;
+}
+
+@keyframes fly-in {
+    from {
+        opacity: 0;
+        transform: translateZ(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.card:hover {
+    opacity: 100%;
+    -webkit-transition: opacity 1s;
+    transition: 0.5s;
+    rotate: 2deg;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+h5.price {
+    font-weight: 500;
+}
+
+.content p {
+    height: 100%;
+    line-height: 1.4;
+    font-family: 'Kanit';
+}
+
+/* .content {
+    background-image: url(/images/giphy.gif) !important;
+
+} */

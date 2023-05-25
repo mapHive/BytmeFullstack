@@ -1,4 +1,4 @@
-let searchAPI = "http://localhost:8080/product/search?keyword="
+let searchAPI = 'https://bytemefullstack.mysql.database.azure.com/product/search?keyword=';
 
 document.getElementById('search-input').addEventListener('input', function() {
     let searchQuery = this.value;

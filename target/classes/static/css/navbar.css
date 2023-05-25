@@ -1,0 +1,58 @@
+#results a {
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+.navbar.bg-body-tertiary {
+    --bs-bg-opacity: 0;
+}
+
+.navbar a {
+    font-size: 1.333rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    margin-left: 38px;
+}
+
+.nav-item {
+    padding-left: 10px;
+}
+
+.left-box {
+    display: flex;
+    margin-right: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#search-input {
+    width: 440px;
+}
+
+.login a {
+    font-size: 1rem;
+}
+
+.login-box {
+    margin-right: 42px;
+}
+
+
+@media only screen and (max-width: 500px) {
+    #search-input {
+              width: 300px;
+              margin-bottom: 15px;
+          }
+    #results a {
+        font-size: .75em;
+    }
+    .navbar-brand {
+        margin: 0;
+    }
+    .navbar-toggler {
+        margin-right: 12px;
+    }
+}
