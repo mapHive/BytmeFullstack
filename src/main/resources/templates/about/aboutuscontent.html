@@ -1,55 +1,120 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>About Us Content</title>
 </head>
-
 <body>
-
 <div th:fragment="aboutuscontent" class="aboutuscontent container-md container-fluid">
     <div class="description container-fluid">
         <h1>About Us</h1>
         <h2>What Makes BYTEME Different?</h2>
-
         <div class="details container-fluid container-md">
-            <p class="my-paragraph">At BYTEME, we don't just sell computer parts, we live and breathe them. <br><br>We're obsessed with innovation and we want to help you achieve the same level of passion for technology.<br><br> Our commitment is to deliver only the best quality products that meet your specific needs. Whether you're looking for high-performance CPUs, powerful graphics cards, or lightning-fast storage solutions, we've got you covered.<br><br> So if you're ready to unleash your inner tech artist, and turn your computer dreams into reality, join the BYTEME party today.<br><br> It's going to be epic! May the BYTEs be with you!</p>
+            <p class="my-paragraph">At BYTEME, we don't just sell computer parts, we live and breathe them. We're
+                obsessed with innovation and we want to help you achieve the same level of passion for technology.
+                Our commitment is to deliver only the best quality products that meet your specific needs. Whether
+                you're looking for high-performance CPUs, powerful graphics cards, or lightning-fast storage
+                solutions, we've got you covered. So if you're ready to unleash your inner tech artist, and turn
+                your computer dreams into reality, join the BYTEME party today. It's going to be epic! May the BYTEs
+                be with you!</p>
         </div>
-
         <div class="team container-fluid container-md text-center">
             <div class="row">
                 <div class="col-lg-3 member teamMember1">
-                    <img class="profile" src="/images/members/hadi.jpg" alt="Hadi" />
-                    <h4>Hadi <br/>'Byte Boss' <br/> Rosman</h4>
+                    <img onclick="showModal(1)" class="profile" src="/images/members/hadi.jpg" alt="Hadi" />
+                    <h4 onclick="showModal(1)">Hadi<br />'Byte Boss' <br /> Rosman</h4>
+                    <div class="modal" id="modal1" style="display: none;">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Hadi Rosman</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Meet Hadi, an accomplished professional with a diverse background in aviation, maritime, and healthcare. His portfolio boasts strong skills in communication, problem-solving, project management, and operational excellence. Exceptionally adept at handling fast-paced environments, Hadi thrives on adaptation and change. <br><br>His astute understanding of social dynamics equips him to navigate various situations effectively, making him a vital asset to any organization. In the face of challenges, Hadi demonstrates steady resolve and strategic acumen, turning potential obstacles into assured successes.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            onclick="hideModal(1)">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="https://www.linkedin.com/in/hadi-rosman-0080a9146/">
                         <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
                     </a>
                 </div>
                 <div class="col-lg-3 member teamMember2">
-                    <img class="profile" src="/images/members/yuki.jpeg" alt="Yuki" />
-                    <h4>Yuki <br/>'Pixel Picasso' <br/> Shintaku</h4>
+                    <img onclick="showModal(2)" class="profile" src="/images/members/yuki.jpeg" alt="Yuki" />
+                    <h4 onclick="showModal(2)">Yuki <br />'Pixel Picasso' <br /> Shintaku</h4>
+                    <div class="modal" id="modal2" style="display: none;">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Yuki Shintaku</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Enter Yuki, a Full Stack Developer wielding tech skills as if they're spells from a wand! Gifted in IT, touched by the wisdom of education, and honed in the cauldrons of a Full Stack Development bootcamp, Yuki has battled system engineering Dementors and orchestrated international sales like a Quidditch match. <br><br>Now, he's ready to craft UI/UX designs as captivating as a Hogwarts banquet. Always one Patronus Charm ahead of the latest tech trends, Yuki is all about conjuring digital magic. <br><br>Ready for a tech adventure or a chat over butterbeer, Yuki awaits your owl!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            onclick="hideModal(2)">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="https://www.linkedin.com/in/yuki-shintaku-446958114/">
                         <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
                     </a>
                 </div>
                 <div class="col-lg-3 member teamMember3">
-                    <img class="profile" src="/images/members/Kiran.jpg" alt="Kiran" />
-                    <h4>Kiran<br/> 'Tech Whisperer'<br/> Brar</h4>
+                    <img onclick="showModal(3)" class="profile" src="/images/members/Kiran.jpg" alt="Kiran" />
+                    <h4 onclick="showModal(3)">Kiran<br /> 'Tech Whisperer'<br /> Brar</h4>
+                    <div class="modal" id="modal3" style="display: none;">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Kiran Brar</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Introducing Kiran, a connoisseur of disciplines! He's swapped hats from academia, sporting a pair of degrees from LaTrobe and Monash, to diverse professional roles as effortlessly as a chameleon changes colors. Whether he's steering a business, orchestrating a start-up's operations, counseling students, or charging as a military officer, Kiran is a dynamo wrapped in a human suit. <br><br> He's an aficionado in leadership, communication, and tech, now on a rendezvous with HTML, CSS, and Javascript. But don't let the techie talk fool you—this maestro also waltzes with psychology, music, and art.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            onclick="hideModal(3)">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="https://www.linkedin.com/in/kiranjeet-singh-brar-276941116/">
                         <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
                     </a>
                 </div>
                 <div class="col-lg-3 member teamMember4">
-                    <img class="profile" src="/images/members/pat.jpg" alt="Pat"/>
-                    <h4>Patricia<br/> 'Byte Babe'<br/> Looi</h4>
+                    <img onclick="showModal(4)" class="profile" src="/images/members/pat.jpg" alt="Pat" />
+                    <h4 onclick="showModal(4)">Patricia<br /> 'Byte Babe'<br /> Looi</h4>
+                    <div class="modal" id="modal4" style="display: none;">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3>Patricia Looi</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Patricia Looi isn't your everyday professional. With a versatile skillset that covers administration, settlement operations, and the management of childcare services, she's definitely not one to be boxed into one category. Patricia has a special place in her heart for technology. She sees it not just as tools or gadgets, but as a pathway to meaningful change in both education and business landscapes. <br><br>With an uncanny knack for blending her wide-ranging skills with tech knowledge, she manages to create new ways to make things work better and more efficiently. Interested in knowing more? Give Patricia a shout to discover her unique take on driving positive change.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            onclick="hideModal(4)">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="https://www.linkedin.com/in/patricia-looi-75023955/">
                         <img class="teamimage" src="/images/Linkedin-Logo.png" alt="Click">
                     </a>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -57,7 +122,16 @@
         <h4> We love to hear from you.</h4>
         <a href="mailto:contact@byteme.com" class="email-button">contact@byteme.com</a>
     </div>
-
+    <script>
+            function showModal(modalId) {
+                var modal = document.getElementById("modal" + modalId);
+                modal.style.display = "block";
+            }
+            function hideModal(modalId) {
+                var modal = document.getElementById("modal" + modalId);
+                modal.style.display = "none";
+            }
+        </script>
+</div>
 </body>
-
 </html>
