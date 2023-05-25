@@ -27,6 +27,10 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{aboutus}">About Us</a>
                 </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item" id="addProductItem">
+                    <a class="nav-link" th:href="@{formpage}">Add Product</a>
+                </li>
+
             </ul>
             <div class="left-box">
                 <div class="search-box">
@@ -36,15 +40,15 @@
             </div>
 
             <div class="login-box">
-            <div sec:authorize="isAuthenticated()">
-                <form id="logOut" th:action="@{/logout}" method="post">
-                    <li style="list-style-type: none;" class="nav-item"><a class="nav-link" onclick="document.getElementById('logOut').submit();">Log Out</a></li>
-                </form>
-            </div>
+                <div sec:authorize="isAuthenticated()">
+                    <form id="logOut" th:action="@{/logout}" method="post">
+                        <li style="list-style-type: none;" class="nav-item"><a class="nav-link" onclick="document.getElementById('logOut').submit();">Log Out</a></li>
+                    </form>
+                </div>
 
-            <div sec:authorize="isAnonymous()">
-                <li style="list-style-type: none;" class="nav-item"><a class="nav-link" th:href="@{login}">Log In</a></li>
-            </div>
+                <div sec:authorize="isAnonymous()">
+                    <li style="list-style-type: none;" class="nav-item"><a class="nav-link" th:href="@{login}">Log In</a></li>
+                </div>
             </div>
 
         </div>
