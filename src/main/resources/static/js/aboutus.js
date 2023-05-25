@@ -1,13 +1,26 @@
-const longParagraph = document.querySelector('#long-paragraph');
-const readMoreButton = document.querySelector('#read-more');
-const readLessButton = document.querySelector('#read-less');
-readMoreButton.addEventListener('click', function() {
-    longParagraph.style.maxHeight = 'none';
-    readMoreButton.style.display = 'none';
-    readLessButton.style.display = 'block';
-});
-readLessButton.addEventListener('click', function() {
-    longParagraph.style.maxHeight = '100px';
-    readLessButton.style.display = 'none';
-    readMoreButton.style.display = 'block';
-});
+let activeModal = null;
+
+function showModal(modalId) {
+    if (activeModal) {
+        activeModal.style.display = 'none';
+    }
+
+    let modal = document.getElementById("modal" + modalId);
+    modal.style.display = "block";
+    activeModal = modal;
+}
+
+function hideModal(modalId) {
+    let modal = document.getElementById("modal" + modalId);
+    modal.style.display = "none";
+    if (activeModal === modal) {
+        activeModal = null;
+    }
+}
+
+window.onclick = function(event) {
+    if (activeModal && event.target === activeModal) {
+        activeModal.style.display = "none";
+        activeModal = null;
+    }
+};
