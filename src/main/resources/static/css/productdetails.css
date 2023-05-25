@@ -37,7 +37,7 @@ h3 {
 .product-description {
   /* border: 2px solid pink; */
   /* Fix important flag */
-  height: 220px !important;
+  height: 260px !important;
   text-align: left;
   border-top: 2px solid #f2f2f2;
   overflow-y: scroll;
@@ -86,7 +86,7 @@ h3 {
   }
 
   .product-description {
-    height: 110px !important;
+    height: 180px !important;
   }
 }
 
