@@ -1,4 +1,4 @@
-let searchAPI = 'https://bytemefullstack.mysql.database.azure.com/product/search?keyword=';
+let searchAPI = 'https://bytemefullstack.azurewebsites.net/product/search?keyword=';
 
 document.getElementById('search-input').addEventListener('input', function() {
     let searchQuery = this.value;

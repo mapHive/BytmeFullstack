@@ -29,25 +29,3 @@ public class FileUploadUtil {
 
 }
 
-//public class FileUploadUtil {
-//
-//    public static void saveFile(String uploadDir, String fileName, MultipartFile multipartFile) throws IOException
-//    {
-//
-//        /* This is the setup using Azure storage */
-//        String connectStr2 = "DefaultEndpointsProtocol=https;AccountName=bytemeproductimages;AccountKey=RCEQbYIsfgPJkuyyUJlalGHXWVqtHLdf1mFpQ3Uip8HQtjj+VzivOPJ+/uqx3VWzuCNR3uQNtSpf+AStljB0ag==;EndpointSuffix=core.windows.net";
-//        BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(connectStr2).buildClient();
-//        String containerName = "productimages";
-//
-//
-//        BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
-//
-//
-//        BlobClient blobClient = containerClient.getBlobClient(fileName);
-//
-//
-//        InputStream inputStream = multipartFile.getInputStream();
-//        blobClient.upload(inputStream);
-//
-//    }
-//}
